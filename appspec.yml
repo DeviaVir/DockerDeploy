@@ -7,7 +7,7 @@ hooks:
       runas: root
   Install:
     - location: deploy/pull.sh
-      timeout: 10000
+      timeout: 60000
       runas: root
   AfterInstall:
     - location: deploy/start.sh
