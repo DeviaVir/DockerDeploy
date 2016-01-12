@@ -4,6 +4,7 @@ if [ "$containercount" != "0" ]
 then
   if [ -f "../hooks/deregister_from_elb.sh" ];
   then
+    chmod +x ../hooks/deregister_from_elb.sh
     ../hooks/deregister_from_elb.sh
   fi
   /usr/bin/docker stop `/usr/bin/docker ps --no-trunc -aq`
