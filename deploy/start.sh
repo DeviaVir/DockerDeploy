@@ -8,7 +8,6 @@ then
   then
     OUTPUT=$(/opt/deploydocker);
     echo $OUTPUT;
-    exit 0;
   fi
   
   if [ -f "/opt/hooks/start" ];
@@ -16,5 +15,5 @@ then
     /opt/hooks/start
   fi
   
-  exit 1;
+  exit 0;
 fi
