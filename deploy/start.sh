@@ -10,9 +10,9 @@ then
     echo $OUTPUT;
   fi
   
-  if [ -f "/opt/hooks/start" ];
+  if [ -f "../hooks/register_with_elb.sh" ];
   then
-    /opt/hooks/start
+    ../hooks/deregister_with_elb.sh
   fi
   
   exit 0;
