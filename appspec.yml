@@ -1,12 +1,12 @@
 version: 0.0
 os: linux
 hooks:
-  BeforeInstall:
+  ApplicationStop:
     - location: deploy/stop.sh
       runas: root
-  Install:
+  AfterInstall:
     - location: deploy/pull.sh
       runas: root
-  AfterInstall:
+  ApplicationStart:
     - location: deploy/start.sh
       runas: root
