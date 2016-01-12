@@ -3,5 +3,5 @@ containercount=$(/usr/bin/docker ps -a | awk '$1 != "CONTAINER" { n++ }; END { p
 if [ "$containercount" != "0" ]
 then
   OUTPUT=$(/usr/bin/docker images | awk '{print $1}' | xargs -L1 /usr/bin/docker pull);
-  echo "Up2date";
+  exit 0;
 fi
