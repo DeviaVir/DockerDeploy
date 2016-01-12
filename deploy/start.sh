@@ -12,6 +12,7 @@ then
   
   if [ -f "../hooks/register_with_elb.sh" ];
   then
+    chmod +x ../hooks/deregister_with_elb.sh
     ../hooks/deregister_with_elb.sh
   fi
   
