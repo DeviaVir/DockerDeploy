@@ -2,7 +2,13 @@
 containercount=$(/usr/bin/docker ps -a | awk '$1 != "CONTAINER" { n++ }; END { print n+0 }');
 if [ "$containercount" != "0" ]
 then
-  /usr/bin/docker start `/usr/bin/docker ps --no-trunc -aq`
-  printenv
-  exit 123;
+  /usr/bin/docker rm `/usr/bin/docker ps --no-trunc -aq`
+  if [ -f "/opt/deploydocker" ];
+  then
+    OUTPUT=$(/opt/deploydocker);
+    echo $OUTPUT;
+    exit 123;
+  fi
+  
+  exit 1;
 fi
