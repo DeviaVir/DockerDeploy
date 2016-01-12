@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 hooks:
-  ApplicationStop:
+  BeforeInstall:
     - location: deploy/stop.sh
       runas: root
   AfterInstall:
