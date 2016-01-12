@@ -3,13 +3,10 @@ os: linux
 hooks:
   BeforeInstall:
     - location: deploy/stop.sh
-      timeout: 60000
       runas: root
   Install:
     - location: deploy/pull.sh
-      timeout: 6000000
       runas: root
   AfterInstall:
     - location: deploy/start.sh
-      timeout: 60000
       runas: root
