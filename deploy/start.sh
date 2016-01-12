@@ -7,7 +7,7 @@ then
   then
     OUTPUT=$(/opt/deploydocker);
     echo $OUTPUT;
-    exit 123;
+    exit 0;
   fi
   
   exit 1;
