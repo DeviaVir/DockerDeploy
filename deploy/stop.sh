@@ -6,6 +6,8 @@ then
   then
     chmod +x ../hooks/deregister_from_elb.sh
     ../hooks/deregister_from_elb.sh
+  else
+    echo "deregister hook not found ${PWD##*/}";
   fi
   /usr/bin/docker stop `/usr/bin/docker ps --no-trunc -aq`
 fi
