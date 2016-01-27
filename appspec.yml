@@ -2,6 +2,7 @@ version: 0.0
 os: linux
 hooks:
   BeforeInstall:
+    - location: deploy/hooks/deregister_from_elb.sh
     - location: deploy/stop.sh
       runas: root
   AfterInstall:
@@ -9,4 +10,5 @@ hooks:
       runas: root
   ApplicationStart:
     - location: deploy/start.sh
+    - location: deploy/hooks/register_with_elb.sh
       runas: root
