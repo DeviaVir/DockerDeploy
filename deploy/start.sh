@@ -10,10 +10,10 @@ then
     echo $OUTPUT;
   fi
   
-  if [ -f "../hooks/register_with_elb.sh" ];
+  if [ -f "./hooks/register_with_elb.sh" ];
   then
-    chmod +x ../hooks/register_with_elb.sh
-    ../hooks/register_with_elb.sh
+    chmod +x ./hooks/register_with_elb.sh
+    ./hooks/register_with_elb.sh
   fi
   
   exit 0;
