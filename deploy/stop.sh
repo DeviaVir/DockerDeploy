@@ -2,10 +2,10 @@
 containercount=$(/usr/bin/docker ps -a | awk '$1 != "CONTAINER" { n++ }; END { print n+0 }');
 if [ "$containercount" != "0" ]
 then
-  if [ -f "./hooks/deregister_from_elb.sh" ];
+  if [ -f "./deploy/hooks/deregister_from_elb.sh" ];
   then
-    chmod +x ./hooks/deregister_from_elb.sh
-    ./hooks/deregister_from_elb.sh
+    chmod +x ./deploy/hooks/deregister_from_elb.sh
+    ./deploy/hooks/deregister_from_elb.sh
   else
     echo "deregister hook not found ${PWD##*/}";
   fi
