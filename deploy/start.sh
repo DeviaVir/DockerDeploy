@@ -1,6 +1,6 @@
 #!/bin/sh
 containercount=$(/usr/bin/docker ps -a | awk '$1 != "CONTAINER" { n++ }; END { print n+0 }');
-if [ "$containercount" != "0" ]
+if [ "$containercount" == "0" ]
 then
   if [ -f "/opt/deploydocker" ];
   then
